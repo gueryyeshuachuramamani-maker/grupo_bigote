@@ -1,12 +1,72 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
     background: white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+.card {
+    background: white;
+    width: 920px;
+    height: 710px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scene {
+    position: absolute;
+    left: -135px;
+    top: 0;
+    width: 1055px; 
+    height: 710px;
+}
+
+.monocle-ring {
+    position: absolute;
+    width: 96px; height: 96px;
+    border: 7px solid #C8A020;
+    border-radius: 50%;
+    top: 241px;     
+    left: 612px;    
+    z-index: 6;
+    background: transparent;
+}
+
+.monocle-chain {
+    position: absolute;
+    width: 3px;
+    height: 135px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #F0C830 0px,  #D4A800 4px,
+        #A07820 8px,  #D4A800 12px
+    );
+    border-radius: 2px;
+    top: 285px;
+    left: 705px;
+    transform: rotate(10deg);
+    transform-origin: top center;
+    z-index: 4;
+}
+.monocle-chain::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 95px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #F0C830 0px, #D4A800 4px,
+        #A07820 8px, #D4A800 12px
+    );
+    border-radius: 2px;
+    top: 133px;
+    left: 0;
+    transform: rotate(18deg);
+    transform-origin: top center;
+}
 
 .mustache {
     width: 180px;
@@ -20,7 +80,6 @@ body {
     top: 120px;
     left: 280px;
 }
-
 .mustache::before {
     content: '';
     position: absolute;
@@ -33,7 +92,6 @@ body {
     transform: rotate(-45deg);
     transform-origin: right 210px;
 }
-
 .mustache::after {
     content: '';
     position: absolute;
